@@ -1,0 +1,98 @@
+{% extends 'Site/base1.html' %}
+{% block title %}{{ m_mouse.M_Mouse_Manufacturer }} {{ m_mouse.M_Mouse_name }}{% endblock %}
+{% block content %}
+<main class="mt-5 pt-4">
+    <div class="container dark-grey-text mt-5">
+        <div class="row wow FadeIn">
+            <div class="col-md-6 mb-4">
+                <{{ m_mouse.mouse_image_set1 }}>
+                <p class="text-center purple lighten-4 lead">{{ m_mouse.M_Mouse_name }}</p>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="p-4">
+                    <div class="mb-3">
+                        <a href="{% url 'mouses' %}">
+                            <span class="badge purple mr-1">Компьютерная мышь</span>
+                        </a>
+                        <a href="">
+                            <span class="badge blue mr-1">New</span>
+                        </a>
+                    </div>
+                    <p class="lead">
+                        <span class="mr-1">
+                            {{m_mouse.M_Mouse_Price}} ₽
+                        </span>
+                    </p>
+                    <p class="lead font-weight-bold">Описание товара</p>
+                    <p><strong>Производитель:</strong> {{ m_mouse.M_Mouse_Manufacturer }}</p>
+                    <p><strong>Модель сенсора: </strong> {{ m_mouse.M_Mouse_SenserModel }} </p>
+                    <p><strong>Частота мыши:</strong> {{ m_mouse.M_Mouse_Frequency }}</p>
+                    <p><strong>Максимальное разрешение датчика:</strong> {{ m_mouse.M_Mouse_DPI }}</p>
+                    <div class="ml-3 mt-5 mb-5">
+                        <h5 class="font-weight-bold">Подключение</h5>
+                            <p><strong>Тип подключения:</strong> {{m_mouse.M_Mouse_ConnectType}}</p>
+                            <p><strong>Интерфейс подключения:</strong> {{m_mouse.M_Mouse_ConnectionInt}}</p>
+                    </div>
+                    <form action="" class="d-flex justify-content-left">
+                        <input type="number" value="1" aria-label="Search"
+                        style="width: 100px" class="form-control">
+                        <button class="btn btn-secondary btn-md my-0 p">
+                            В корзину <i class="fa fa-shopping-cart ml-1"></i>
+                        </button>
+                    </form>
+                    <div class="mb-5 mt-5">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row d-flex justify-content-center wow fadeIn">
+        <div class="col-md-6 text-center">
+            <h4 class="my-4 h4"> Дополнительная информация</h4>
+            {% if m_mouse.M_Mouse_Manufacturer.Manufacturer_name == "Logitech" %}
+            <p> Logitech — швейцарская компания, которая разрабатывает продукты и технологии, ставшие неотъемлемой частью
+                повседневной жизни. Основными ее приоритетами являются внедрение инноваций и постоянное повышение качества продукции.
+                Фирма, основанная в Лозанне (Швейцария) в 1981 г., быстро завоевала позиции на рынке, расширив сферу своего влияния вплоть до Кремниевой долины.
+                Создатели Logitech стремились наладить контакты между людьми, и им это удалось — посредством инновационных периферийных устройств для компьютеров
+                и множества других новинок,
+                среди которых инфракрасная беспроводная мышь, трекбол, управляемый большим пальцем, лазерная мышь и другие.</p>
+            {% elif m_mouse.M_Mouse_Manufacturer.Manufacturer_name == "ZET GAMING" %}
+             <p> ZET – новый бренд от уже известной российскому потребителю компании DEXP. Эта компания была основана в 1998 году в
+                 городе Владивосток, однако ОЕМ-поставками компьютерной и бытовой техники она начала заниматься сравнительно недавно - в 2009 году.</p>
+             {% elif m_mouse.M_Mouse_Manufacturer.Manufacturer_name == "SteelSeries" %}
+             <p>Начиная с 2001 года SteelSeries является движущей силой киберспорта и профессиональных игр.
+                 Наша компания не просто спонсирует профессиональных игроков (став одной из первых компаний, оказывающих поддержку профессиональным геймерам),
+                 но также разрабатывает оборудование специально для команд и помогает талантливым геймерам становиться мировыми суперзвездами.
+                 Мы стремимся развивать игровую индустрию и помогать игрокам по всему миру.</p>
+             {% elif m_mouse.M_Mouse_Manufacturer.Manufacturer_name == "Razer" %}
+             <p> Компания Razer сотрудничает с профессиональными игроками для разработки, производства и
+                 распространения высокотехнологичных периферийных устройств, обеспечивающих конкурентные преимущества в игре.
+                 Еще на стадии становления отрасли профессиональных компьютерных игр компания Razer вышла на рынок с интересными решениями, предназначенными для геймеров.
+                 С середины 90-х годов в связи с широким распространением сетевых игр и появлением шутеров от первого лица (FPS) стало очевидно,
+                 что устаревшие модели периферийных устройств скорее тормозили, чем улучшали игру.</p>
+             {% elif m_mouse.M_Mouse_Manufacturer.Manufacturer_name == "HyperX" %}
+             <p> HyperX — подразделение (и одноимённый бренд) американской компании HP Inc., специализирующейся на
+                 поставке аппаратного и программного обеспечения для
+                 организаций и индивидуальных потребителей.
+                 Компоненты HyperX неоднократно использовались при постановке мировых рекордов разгона компьютеров.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+            <img src="" alt="" class="img-fluid">
+        </div>
+         <div class="col-lg-4 col-md-12 mb-4">
+            <img src="" alt="" class="img-fluid">
+        </div>
+         <div class="col-lg-4 col-md-12 mb-4">
+            <img src="" alt="" class="img-fluid">
+        </div>
+    </div>
+</main>
+{% endblock %}

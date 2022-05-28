@@ -1,0 +1,103 @@
+{% extends 'Site/base1.html' %}
+{% block title %}Главная{% endblock %}
+{% block content %}
+{% load static %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = new ChiefSlider('.slider', {
+          loop: true,
+          autoplay: true,
+          interval: 5000,
+          swipe: true,
+          refresh: false
+      });
+    });
+  </script>
+  <div class="slider pt-5">
+  <div class="slider__container">
+    <div class="slider__wrapper">
+      <div class="slider__items">
+        <div class="slider__item">
+          <img src="{% static 'uploads/keyboard.png' %}">
+        </div>
+        <div class="slider__item">
+          <img src="{% static 'uploads/headset3.png' %}">
+        </div>
+        <div class="slider__item">
+          <img src="{% static 'uploads/mouse1.png' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="slider__control" data-slide="prev"></a>
+  <a href="#" class="slider__control" data-slide="next"></a>
+</div>
+
+<main>
+<hr>
+    <div class="container-lg">
+        <div class="row">
+             <nav class="navbar navbar-expand-lg
+                    navbar-dark purple lighten-2 mt-3 mb-5">
+                    <span class="navbar-brand p-2">Категории товаров: </span>
+                </nav>
+             <section class="text-center mb-4">
+                <div class="row wow fadeIn">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="view overlay">
+                                <img class=card-img-top src=/uploads/logitech-g-pro-x-wireless-headset-1-1000x1000.jpg>
+                                <a href="{% url 'headsets' %}">
+                                <div class="mask rgba-white-slight"></div>
+                                    </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5>
+                                    <strong>
+                                        <a class="dark-grey-text"> Наушники</a>
+                                    </strong>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="view overlay">
+                                <img class=card-img-top src=/uploads/896c4add1ef20a8434b90073d5568d3b327d27e238a74cb55918bdc896f67f46.jpg.webp>
+                                <a href="{% url 'keyboards' %}">
+                                <div class="mask rgba-white-slight"></div>
+                                    </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5>
+                                    <strong>
+                                        <a class="dark-grey-text"> Клавиатуры</a>
+                                    </strong>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+                            <div class="view overlay">
+                                <img class=card-img-top src=/uploads/180b5b0b9b367f93b8ee01929bf70fa5669f1d04e3cd8339b7583ac9d27d9ac9.jpg.webp>
+                                <a href="{% url 'mouses' %}">
+                                <div class="mask rgba-white-slight"></div>
+                                    </a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5>
+                                    <strong>
+                                        <a class="dark-grey-text"> Мышки</a>
+                                    </strong>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
