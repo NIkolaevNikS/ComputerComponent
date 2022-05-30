@@ -53,12 +53,3 @@ document.getElementById("maxPrice").onchange = function() {
 if (sessionStorage.getItem('maxPrice')) {
     document.getElementById("maxPrice").value = sessionStorage.getItem('maxPrice');
 }
-
-document.getElementById("range-slider").onchange = function() {
-    sessionStorage.setItem('maxPrice', document.getElementById("maxPrice").value);
-    sessionStorage.setItem('minPrice', document.getElementById("minPrice").value);
-}
-if (sessionStorage.getItem('maxPrice') || sessionStorage.getItem('minPrice')) {
-    document.getElementById("maxPrice").value = sessionStorage.getItem('maxPrice');
-    document.getElementById("minPrice").value = sessionStorage.getItem('minPrice');
-}

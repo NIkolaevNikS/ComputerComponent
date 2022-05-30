@@ -13,21 +13,21 @@
                             Фильтр
                         </div>
                     </div>
-                <form method="get" id="formmain">
+                <form method="get" id="FormMain">
                     <div class="form-group card-body mt-1">
                           <div class="mb-3">
                             <h3 class="filter-price__title">Цена</h3>
                             <div class="filter-price__slider" id="range-slider"></div>
                             <div class="filter-price__inputs">
                             <label class="form-control filter-price__label">
-                                <span class="filter-price__text">от</span>
-                                <input type="number" min=500 max="25000" class="filter-price__input" id="minPrice" name="min_price">
-                                <span class="filter-price__text">₽</span>
+                                <span class="filter-price__text need-hide">от</span>
+                                <input type="number" min=500 max="25000" class="filter-price__input input-group" id="minPrice" name="min_price">
+                                <span class="filter-price__text need-hide">₽</span>
                             </label>
                             <label class="form-control filter-price__label">
-                                <span class="filter-price__text">до</span>
-                                <input type="number" min=500 max="25000" class="filter-price__input" id="maxPrice" name="max_price">
-                                <span class="filter-price__text">₽</span>
+                                <span class="filter-price__text need-hide">до</span>
+                                <input type="number" min=500 max="25000" class="filter-price__input input-group" id="maxPrice" name="max_price">
+                                <span class="filter-price__text need-hide">₽</span>
                             </label>
                             </div>
                         </div>
@@ -95,7 +95,8 @@
                         </select>
                     </div>
                         <div class="d-grid gap-2">
-                    <button type="submit" class="btn purple lighten-3 btn-secondary">Найти</button>
+                            <button type="submit" id="btn_submit" class="btn purple lighten-3 btn-secondary">Найти</button>
+                            <a href="{% url 'headsets' %}" id="btn_reset" class="btn purple lighten-3 btn-secondary">Сбросить фильтры</a>
                             </div>
                     </div>
                 </form>
@@ -163,6 +164,10 @@
 <script>
 document.getElementById("search").onchange = function() {
     document.getElementById("target").submit();
+}
+
+document.getElementById("btn_reset").onclick = function() {
+    sessionStorage.clear();
 }
 
 function fun1() {

@@ -3,8 +3,8 @@
     {% block content %}
 {% load static %}
 {% if user.is_authenticated %}
-<section class="vh-100">
-      <div class="container py-5 h-100">
+<section>
+      <div class="container py-5 mt-5 vh-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
           <div class="col-md-8 col-lg-7 col-xl-6">
             <img src="{% static 'uploads/waterproof-desk-mat-mockup-right-view.jpg' %}"
@@ -25,8 +25,8 @@
 {% else %}
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    <section class="vh-100">
-      <div class="container py-5 h-100">
+    <section>
+      <div class="container py-5 vh-100">
         <div class="row d-flex align-items-center justify-content-center h-100">
           <div class="col-md-8 col-lg-7 col-xl-6">
             <img src="{% static 'uploads/waterproof-desk-mat-mockup-right-view.jpg' %}"

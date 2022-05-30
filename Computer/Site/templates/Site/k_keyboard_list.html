@@ -21,12 +21,12 @@
                             <div class="filter-price__inputs">
                             <label class="form-control filter-price__label">
                                 <span class="filter-price__text">от</span>
-                                <input type="number" min=0 max="25000" class="filter-price__input" id="minPrice" placeholder="0" name="min_price">
+                                <input type="number" min=0 max="25000" class="filter-price__input input-group" id="minPrice" placeholder="0" name="min_price">
                                 <span class="filter-price__text">₽</span>
                             </label>
                             <label class="form-control filter-price__label">
                                 <span class="filter-price__text">до</span>
-                                <input type="number" min=0 max="25000" class="filter-price__input" id="maxPrice" placeholder="10000" name="max_price">
+                                <input type="number" min=0 max="25000" class="filter-price__input input-group" id="maxPrice" placeholder="10000" name="max_price">
                                 <span class="filter-price__text">₽</span>
                             </label>
                             </div>
@@ -87,6 +87,7 @@
                     </div>
                     <div class="d-grid gap-2">
                     <button type="submit" class="btn purple lighten-3 btn-secondary">Найти</button>
+                    <button type="reset" id="btn_reset" onclick="sessionStorage.clear();" class="btn purple lighten-3 btn-secondary">Сбросить фильтры</button>
                     </div>
                     </div>
                 </form>

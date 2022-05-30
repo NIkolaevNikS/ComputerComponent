@@ -3,14 +3,13 @@ from django.db.models import Q
 from django.http import *
 from django.shortcuts import render
 from django.views import generic
-from rest_framework.viewsets import ModelViewSet
+
 from django.core.paginator import Paginator
 
 from .models import H_HeadSet_Hz, H_HeadSet_Set, H_HeadSet, H_HeadSet_Sens, H_HeadSet_Scheme, K_Keyboard, \
     K_Keyboard_Type, K_Keyboard_Format, K_Keyboard_SwitchModel, M_Mouse_SenserModel, M_Mouse, M_Mouse_DPI, \
     M_Mouse_Frequency, Manufacturer, ConnectType, ConnectionInt
 from .forms import MouseForm, LoginForm, UserRegistrationForm, KeyboardForm, HeadsetForm
-from .serializers import MouseSerializer
 
 
 def index(request):
@@ -48,11 +47,6 @@ def index(request):
                            'num_ConnectType': num_ConnectType,
                            'num_ConnectionInt': num_ConnectionInt,
                            'num_M_Mouse_Frequency': num_M_Mouse_Frequency})
-
-
-class M_MouseViewSet(ModelViewSet):
-    queryset = M_Mouse.objects.all()
-    serializer_class = MouseSerializer
 
 
 class M_MouseDetailView(generic.DetailView):

@@ -1,20 +1,6 @@
-import document
-from django.contrib import admin
-from django.template.defaulttags import url
 from django.urls import path, include, re_path
-from rest_framework.routers import SimpleRouter
 
 from . import views
-
-from django.conf.urls.static import static
-from django.conf import settings
-
-from .views import M_MouseViewSet
-
-router = SimpleRouter()
-
-router.register(r'mouses1', M_MouseViewSet)
-
 
 urlpatterns = [
     path('', views.index, name='home'),

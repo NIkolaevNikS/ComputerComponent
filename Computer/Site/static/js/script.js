@@ -13,7 +13,6 @@ var CLASS_ITEM_ACTIVE = 'slider__item_active';
 var CLASS_INDICATOR_ACTIVE = 'active';
 
 function ChiefSlider(selector, config) {
-  // СЌР»РµРјРµРЅС‚С‹ СЃР»Р°Р№РґРµСЂР°
   var $root = typeof selector === 'string' ?
     document.querySelector(selector) : selector;
   this._$root = $root;
@@ -49,17 +48,14 @@ function ChiefSlider(selector, config) {
       this._config[key] = config[key];
     }
   }
-  // create some constants
   var $itemList = this._$itemList;
   var widthItem = $itemList[0].offsetWidth;
   var widthWrapper = this._$wrapper.offsetWidth;
   var itemsInVisibleArea = Math.round(widthWrapper / widthItem);
-  // initial setting properties
   this._widthItem = widthItem;
   this._widthWrapper = widthWrapper;
   this._itemsInVisibleArea = itemsInVisibleArea;
   this._transformStep = 100 / itemsInVisibleArea;
-  // initial setting order and translate items
   for (var i = 0, length = $itemList.length; i < length; i++) {
     $itemList[i].dataset.index = i;
     $itemList[i].dataset.order = i;
@@ -69,7 +65,6 @@ function ChiefSlider(selector, config) {
     }
   }
   if (this._config.loop) {
-    // РїРµСЂРµРјРµС‰Р°РµРј РїРѕСЃР»РµРґРЅРёР№ СЃР»Р°Р№Рґ РїРµСЂРµРґ РїРµСЂРІС‹Рј
     var count = $itemList.length - 1;
     var translate = -$itemList.length * 100;
     $itemList[count].dataset.order = -1;
