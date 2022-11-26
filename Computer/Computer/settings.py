@@ -81,10 +81,10 @@ WSGI_APPLICATION = 'Computer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'computercomponent',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': '127.0.0.1',
+        'NAME': '1_02',
+        'USER': '1_02',
+        'PASSWORD': 'krV23E1NU63y',
+        'HOST': 'sutct.org',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
